@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- Font awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Workshop DOM</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Shopping Card</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="shopping-card-container">
+        <div class="total-price">
+          <span> Total price :<span class="total"> 0  </span>$ </span>
+          
+        </div>
+        <div class="list-products">
+          <!-- Product 1 : baskets -->
+        
+            <div class="card-body" id="corps">
+              <div class="card" style="width: 18rem">
+                <img id="img"
+                  src="C:\Users\ozova\Desktop\GOMYCODE\test.perso\baskets.png"
+                  class="card-img-top"
+                  alt="baskets"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Baskets</h5>
+                  <p class="card-text">This is a basket</p>
+                  <h4 class="unit-price">100 $</h4>
+                  <div>
+                    <i class="fas fa-plus-circle" id="plus"></i>
+                    <span class="quantity">0</span>
+                    <i class="fas fa-minus-circle" id="moins"></i>
+                  </div>
+                  <div>
+                  <i class="fas fa-trash-alt" id="cancel" onclick="supp();"></i>
+                    <i class="fas fa-heart" id="button" onclick="change();"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          <!-- Product 2 : socks -->
+
+          <div class="card-body" id="carte2">
+            <div class="card" style="width: 18rem">
+              <img id="img2"
+                src="C:\Users\ozova\Desktop\GOMYCODE\test.perso\bag.png"
+                class="card-img-top"
+                alt="bag"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Baskets</h5>
+                <p class="card-text">This is a basket</p>
+                <h4 class="unit-price">20 $</h4>
+                <div>
+                  <i class="fas fa-plus-circle" id="plus2"></i>
+                  <span class="qt">0</span>
+                  <i class="fas fa-minus-circle" id="moins2"></i>
+                </div>
+                <div>
+                <i class="fas fa-trash-alt" id="cancel2" onclick="sup();"></i>
+                  <i class="fas fa-heart" id="button2" onclick="chg();"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Product 3 : bag -->
+          <div class="card-body" id="carte3" >
+            <div class="card" style="width: 18rem">
+              <img id="img3"
+                src="C:\Users\ozova\Desktop\GOMYCODE\test.perso\socks.png"
+                class="card-img-top"
+                alt="socks"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Baskets</h5>
+                <p class="card-text">This is a basket</p>
+                <h4 class="unit-price">50 $</h4>
+                <div>
+                  <i class="fas fa-plus-circle" id="plus3"></i>
+                  <span class="qt3">0</span>
+                  <i class="fas fa-minus-circle" id="moins3"></i>
+                </div>
+                <div>
+                <i class="fas fa-trash-alt" id="cancel3" onclick="sup3();"></i>
+                  <i class="fas fa-heart" id="button3" onclick="chg3();"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+    </main>
+    <footer></footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- My JS    <script src="script.js"></script> -->
+    
+
+    <script>
+        var plus =document.querySelector("#plus");
+        var qt =document.querySelector(".quantity");
+        var moins =document.querySelector("#moins");
+        var heart = document.querySelector("#heart");
+        var total =document.querySelector(".total");
+        var carte=document.querySelector(".card-body");
+
+        deb=0;
+        prix=100;
+        som=0;
+
+
+        plus.addEventListener('click',() =>{
+          deb++;
+          deb = (deb < 10) ? "0" + deb:deb;
+          qt.innerHTML = deb;
+          console.log(deb);
+
+
+          total.innerHTML= (deb*prix)+(deb2*prix2)+ (deb3*prix3);
+          
+        })
+
+        moins.addEventListener('click',() =>{
+            if (deb > 0) {
+              deb--;
+
+            deb = (deb < 10) ? "0"  + deb:deb;
+            qt.innerHTML = deb;
+            total.innerHTML= (deb*prix)+(deb2*prix2)+ (deb3*prix3);
+            console.log(deb);
+
+            
+            
+          
+            }
+          
+        })
+
+
+
+        let choix =true;
+
+        function change() {
+          let button=document.getElementById("button");
+          
+
+          if (choix == true) {
+              button.style.color = "red";
+              choix = false;
+          } else {
+            button.style.color = "black";
+            choix = true;
+          }
+        }
+
+
+        function supp() {
+          let cancel = document.getElementById("cancel");
+          
+          carte.style.display ="none";
+          
+          total.innerHTML= qt.innerHTML = deb=0;;
+
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+        var plus2 =document.querySelector("#plus2");
+        var qt2 =document.querySelector(".qt");
+        var moins2 =document.querySelector("#moins2");
+        var heart2 = document.querySelector("#heart2");
+        var total =document.querySelector(".total");
+        var carte2=document.querySelector("#carte2");
+        
+
+        deb2=0;
+        prix2=20;
+        som2=0;
+
+
+        plus2.addEventListener('click',() =>{
+          deb2++;
+          deb2 = (deb2 < 10) ? "0" + deb2:deb2;
+          qt2.innerHTML = deb2;
+          console.log(deb2);
+
+
+          total.innerHTML= (deb*prix)+(deb2*prix2)+ (deb3*prix3);
+          
+        })
+
+        moins2.addEventListener('click',() =>{
+            if (deb2 > 0) {
+              deb2--;
+
+              deb2 = (deb2 < 10) ? "0"  + deb2:deb2;
+              qt2.innerHTML = deb2;
+              total.innerHTML= (deb*prix)+(deb2*prix2)+ (deb3*prix3);
+            console.log(deb2);
+
+            
+            
+          
+            }
+          
+        })
+
+
+
+        let choix2 =true;
+
+        function chg() {
+          let button2=document.getElementById("button2");
+          
+
+          if (choix2 == true) {
+              button2.style.color = "red";
+              choix2 = false;
+          } else {
+            button2.style.color = "black";
+            choix2 = true;
+          }
+        }
+
+
+        function sup() {
+          let cancel2 = document.getElementById("cancel2");
+          carte2.style.display ="none";
+          
+          qt2.innerHTML = deb2=0;
+          total.innerHTML= (deb*prix)+(deb3*prix3)-qt2.innerHTML;
+
+        }
+/*/
+        heart.addEventListenner('click' , () => {
+          heart.style.color ="red";
+        })*/
+
+
+
+         ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+         var plus3 =document.querySelector("#plus3");
+        var qt3 =document.querySelector(".qt3");
+        var moins3 =document.querySelector("#moins3");
+        var heart3 = document.querySelector("#heart3");
+        var total =document.querySelector(".total");
+        var carte3=document.querySelector("#carte3");
+        
+
+        deb3=0;
+        prix3=50;
+        som3=0;
+
+
+        plus3.addEventListener('click',() =>{
+          deb3++;
+          deb3 = (deb3 < 10) ? "0" + deb3:deb3;
+          qt3.innerHTML = deb3;
+          console.log(deb3);
+
+
+          total.innerHTML= (deb*prix)+(deb2*prix2)+ (deb3*prix3);
+          
+        })
+
+        moins3.addEventListener('click',() =>{
+            if (deb3 > 0) {
+              deb3--;
+
+              deb3 = (deb3 < 10) ? "0"  + deb3:deb3;
+              qt3.innerHTML = deb3;
+              total.innerHTML= (deb*prix)+(deb2*prix2)+ (deb3*prix3);
+            console.log(deb3);
+
+            
+            
+          
+            }
+          
+        })
+
+
+
+        let choix3 =true;
+
+        function chg3() {
+          let button3=document.getElementById("button3");
+          
+
+          if (choix3 == true) {
+              button3.style.color = "red";
+              choix3 = false;
+          } else {
+            button3.style.color = "black";
+            choix3 = true;
+          }
+        }
+
+
+        function sup3() {
+          let cancel3 = document.getElementById("cancel3");
+          carte3.style.display ="none"; 
+
+          qt3.innerHTML = deb3=0;
+          total.innerHTML= (deb*prix)+(deb2*prix2)-qt3.innerHTML;
+
+        }
+
+
+    </script>
+    
+  </body>
+</html>
